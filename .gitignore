@@ -1,0 +1,8 @@
+# Backend related
+**/__pycache__
+**/*.py[cod]
+**/*.egg-info
+
+# Security related
+**/*.pem
+.env*
