@@ -1,3 +1,4 @@
+# This isn't used yet; this is for Helm migration stuff later
 api:
   replicaCount: 2
   image: 370056820766.dkr.ecr.us-east-1.amazonaws.com/tinynakji-backend:latest
