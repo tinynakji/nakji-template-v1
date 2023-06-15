@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
-  # namespace: default
+  namespace: default
   annotations:
     alb.ingress.kubernetes.io/load-balancer-name: ingress
     alb.ingress.kubernetes.io/target-type: ip
@@ -19,4 +19,4 @@ spec:
               service:
                 name: ui-service
                 port: 
-                  number: 3000
+                  number: 80
