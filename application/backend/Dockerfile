@@ -39,5 +39,4 @@ USER app
 # Expose port 5000 for the Flask application to listen on
 EXPOSE 5000
 
-WORKDIR $APP_HOME/flask_app
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
