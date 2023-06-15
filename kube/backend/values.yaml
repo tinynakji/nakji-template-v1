@@ -1,7 +1,7 @@
 api:
   replicaCount: 2
   image: your-image-repository/api-image:latest
-  port: 5000
+  port: "5000"
   env:
     POSTGRES_HOST: "localhost"
     POSTGRES_PORT: 5432
