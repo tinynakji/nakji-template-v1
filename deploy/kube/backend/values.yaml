@@ -1,6 +1,6 @@
 api:
   replicaCount: 2
-  image: your-image-repository/api-image:latest
+  image: 370056820766.dkr.ecr.us-east-1.amazonaws.com/tinynakji-backend:latest
   port: 5000
   env:
     POSTGRES_HOST: "localhost"
