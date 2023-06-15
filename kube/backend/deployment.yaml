@@ -14,23 +14,23 @@ spec:
     spec:
       containers:
         - name: api-container
-          image: "{{ .Values.api.image }}"
+          image: your-image-repository/api-image:latest
           ports:
             - containerPort: 5000
           env:
             - name: POSTGRES_HOST
-              value: {{ .Values.api.env.POSTGRES_HOST }}
+              value: "localhost"
             - name: POSTGRES_PORT
-              value: {{ .Values.api.env.POSTGRES_PORT }}
+              value: 5432
             - name: POSTGRES_DB
-              value: {{ .Values.api.env.POSTGRES_DB }}
+              value: "mydatabase"
             - name: POSTGRES_USER
-              value: {{ .Values.api.env.POSTGRES_USER }}
+              value: "myuser"
             - name: POSTGRES_PASSWORD
-              value: {{ .Values.api.env.POSTGRES_PASSWORD }}
+              value: "myuser"
             - name: AWS_S3_BUCKET_NAME
-              value: {{ .Values.api.env.AWS_S3_BUCKET_NAME }}
+              value: "myuser"
             - name: AWS_ACCESS_KEY
-              value: {{ .Values.api.env.AWS_ACCESS_KEY }}
+              value: "myuser"
             - name: AWS_SECRET_ACCESS_KEY
-              value: {{ .Values.api.env.AWS_SECRET_ACCESS_KEY }}
+              value: "myuser"
