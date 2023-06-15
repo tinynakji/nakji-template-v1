@@ -19,4 +19,4 @@ spec:
               service:
                 name: ui-service
                 port:
-                  name: svc-port
+                  name: 3000
