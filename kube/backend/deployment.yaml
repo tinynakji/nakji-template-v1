@@ -16,21 +16,21 @@ spec:
         - name: api-container
           image: { .Values.api.image }
           ports:
-            - containerPort: {{ .Values.api.port }}
+            - containerPort: { .Values.api.port }
           env:
             - name: POSTGRES_HOST
-              value: {{ .Values.api.env.POSTGRES_HOST }}
+              value: { .Values.api.env.POSTGRES_HOST }
             - name: POSTGRES_PORT
-              value: {{ .Values.api.env.POSTGRES_PORT }}
+              value: { .Values.api.env.POSTGRES_PORT }
             - name: POSTGRES_DB
-              value: {{ .Values.api.env.POSTGRES_DB }}
+              value: { .Values.api.env.POSTGRES_DB }
             - name: POSTGRES_USER
-              value: {{ .Values.api.env.POSTGRES_USER }}
+              value: { .Values.api.env.POSTGRES_USER }
             - name: POSTGRES_PASSWORD
-              value: {{ .Values.api.env.POSTGRES_PASSWORD }}
+              value: { .Values.api.env.POSTGRES_PASSWORD }
             - name: AWS_S3_BUCKET_NAME
-              value: {{ .Values.api.env.AWS_S3_BUCKET_NAME }}
+              value: { .Values.api.env.AWS_S3_BUCKET_NAME }
             - name: AWS_ACCESS_KEY
-              value: {{ .Values.api.env.AWS_ACCESS_KEY }}
+              value: { .Values.api.env.AWS_ACCESS_KEY }
             - name: AWS_SECRET_ACCESS_KEY
-              value: {{ .Values.api.env.AWS_SECRET_ACCESS_KEY }}
+              value: { .Values.api.env.AWS_SECRET_ACCESS_KEY }
