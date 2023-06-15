@@ -1,0 +1,1 @@
+docker build -f ../application/backend/Dockerfile --env-file .env -t nakji_deploy:latest ../application/backend

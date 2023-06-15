@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - name: api-container
+          image: your-image-repository/api-image:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: POSTGRES_HOST
+              value: "localhost"
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_DB
+              value: "mydatabase"
+            - name: POSTGRES_USER
+              value: "myuser"
+            - name: POSTGRES_PASSWORD
+              value: "myuser"
+            - name: AWS_S3_BUCKET_NAME
+              value: "myuser"
+            - name: AWS_ACCESS_KEY
+              value: "myuser"
+            - name: AWS_SECRET_ACCESS_KEY
+              value: "myuser"
