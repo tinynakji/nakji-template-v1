@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api-deployment
 spec:
-  replicas: {{ .Values.api.replicaCount }}
+  replicas: { .Values.api.replicaCount }
   selector:
     matchLabels:
       app: api
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-container
-          image: {{ .Values.api.image }}
+          image: { .Values.api.image }
           ports:
             - containerPort: {{ .Values.api.port }}
           env:
