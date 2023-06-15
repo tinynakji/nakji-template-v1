@@ -3,11 +3,11 @@ api:
   image: your-image-repository/api-image:latest
   port: 5000
   env:
-    POSTGRES_HOST: localhost
+    POSTGRES_HOST: "localhost"
     POSTGRES_PORT: 5432
-    POSTGRES_DB: mydatabase
-    POSTGRES_USER: myuser
-    POSTGRES_PASSWORD: mypassword
-    AWS_S3_BUCKET_NAME: my-bucket
-    AWS_ACCESS_KEY: my-access-key
-    AWS_SECRET_ACCESS_KEY: my-secret-access-key
+    POSTGRES_DB: "mydatabase"
+    POSTGRES_USER: "myuser"
+    POSTGRES_PASSWORD: "mypassword"
+    AWS_S3_BUCKET_NAME: "my-bucket"
+    AWS_ACCESS_KEY: "my-access-key"
+    AWS_SECRET_ACCESS_KEY: "my-secret-access-key"
