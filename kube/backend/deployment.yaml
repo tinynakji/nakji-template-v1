@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api-deployment
 spec:
-  replicas: { .Values.api.replicaCount }
+  replicas: 2
   selector:
     matchLabels:
       app: api
