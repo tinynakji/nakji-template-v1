@@ -1,7 +1,7 @@
 #!/bin/bash
 
 kubectl apply \
-    -f backend/deployment.yaml \
-    -f backend/service.yaml \
-    -f frontend/deployment.yaml \
-    -f frontend/service.yaml
+    -f kube/backend/deployment.yaml \
+    -f kube/backend/service.yaml \
+    -f kube/frontend/deployment.yaml \
+    -f kube/frontend/service.yaml
