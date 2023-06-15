@@ -21,7 +21,7 @@ spec:
             - name: POSTGRES_HOST
               value: "localhost"
             - name: POSTGRES_PORT
-              value: 5432
+              value: "5432"
             - name: POSTGRES_DB
               value: "mydatabase"
             - name: POSTGRES_USER
