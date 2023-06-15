@@ -16,7 +16,7 @@ spec:
         - name: api-container
           image: "{{ .Values.api.image }}"
           ports:
-            - containerPort: {{ .Values.api.port }}
+            - containerPort: 5000
           env:
             - name: POSTGRES_HOST
               value: {{ .Values.api.env.POSTGRES_HOST }}
