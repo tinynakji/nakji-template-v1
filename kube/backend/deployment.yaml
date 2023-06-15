@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-container
-          image: {{ .Values.api.image }}
+          image: "{{ .Values.api.image }}"
           ports:
             - containerPort: {{ .Values.api.port }}
           env:
