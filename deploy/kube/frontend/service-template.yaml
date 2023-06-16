@@ -8,5 +8,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: $FRONTEND_PORT
+      targetPort: "$FRONTEND_PORT"
   type: ClusterIP

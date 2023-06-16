@@ -16,7 +16,7 @@ spec:
         - name: ui-container
           image: $FRONTEND_IMAGE_URL
           ports:
-            - containerPort: $FRONTEND_PORT
+            - containerPort: "$FRONTEND_PORT"
           env:
             - name: API_PATH
               value: "http://api-service"
