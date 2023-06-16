@@ -16,7 +16,7 @@ spec:
         - name: api-container
           image: $BACKEND_IMAGE_URL
           ports:
-            - containerPort: "$BACKEND_PORT"
+            - containerPort: $BACKEND_PORT
           env:
             - name: POSTGRES_HOST
               value: "$POSTGRES_HOST"
