@@ -3,6 +3,19 @@
 **/*.py[cod]
 **/*.egg-info
 
+# Frontend related
+**/node_modules
+**/build
+**/dist
+**/.next
+
 # Security related
 **/*.pem
 .env*
+
+# kube compiled related
+deploy/kube/backend/deployment.yaml
+deploy/kube/backend/service.yaml
+deploy/kube/frontend/deployment.yaml
+deploy/kube/frontend/service.yaml
+deploy/kube/ingress/ingress.yaml
