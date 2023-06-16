@@ -57,72 +57,27 @@ yarn build && yarn start
 ```
 
 ## Deployment
-Requires `env.local` file; ask for example
+Stack:
+* AWS EKS
+ - In VPC, with an EC2 machine to interact from
+* RDS in VPC
+* AWS Load Balancer in VPC
+* Certificate Manager
+* Domain Name Management
 
-### Locally start all apps
-Aliases
-```
-alias dcb="docker-compose -f docker-compose.dev.yml build"
-alias dcup="docker-compose -f docker-compose.dev.yml up -d"
-alias dcdown="docker-compose -f docker-compose.dev.yml down"
-alias dcdownv="docker-compose -f docker-compose.dev.yml down -v"
-```
-Commands to build and run:
-```
-dcdevb
-dedevup
-```
+Main IAM Role with the following permissions:
+- TODO
 
-NOTE: This creates a fresh postgres instance; if you'd rather connect to a local postgres table, edit env vars accordingly and remove db from docker-compose
-
-### Deploy with SSL enabled
+And Trusted Relations
 ```
-# In remote machine
-ssh root@${instance_host}
+TODO
 ```
 
-Some aliases
-```
-# Interacting with DO
-alias do_rsync="rsync -a ./ root@${instance_host}:/home/${user}/workspace/"
+Steps:
 
-alias dcprodb="docker-compose -f docker-compose.prod.yml build"
-alias dcprodup="docker-compose -f docker-compose.prod.yml up -d"
-alias dcproddown="docker-compose -f docker-compose.prod.yml down"
-alias dcproddownv="docker-compose -f docker-compose.prod.yml down -v"
-```
-
-#### Create from scratch
-```
-dcprodb
-dcprodup
-```
-
-Create SSL pem file
-```
-docker-compose stop webserver
-
-mkdir dhparam
-
-sudo openssl dhparam -out ./dhparam/dhparam-2048.pem 2048
-
-docker-compose up -d --force-recreate --no-deps webserver
-```
-
-#### Renewing certificate
-(haven't tested this yet, will do so after first expiration. Otherwise just start from scratch)
-```
-# DRYRUN, check that certificat CAN be created
-docker-compose -f docker-compose.prod.yml run certbot renew --dry-run && docker-compose -f docker-compose.prod.yml  kill -s SIGNUP webserver
-
-# Actual renewal
-docker-compose -f docker-compose.prod.yml run certbot renew && docker-compose -f docker-compose.prod.yml  kill -s SIGNUP webserver
-```
 
 ### Only restart UI or web
 ```
-docker-compose -f docker-compose.prod.yml up --detach --build web
-docker-compose -f docker-compose.prod.yml up --detach --build ui
 ```
 
 ### Interacting with postgres instance
