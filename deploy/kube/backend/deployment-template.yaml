@@ -14,23 +14,23 @@ spec:
     spec:
       containers:
         - name: api-container
-          image: 370056820766.dkr.ecr.us-east-1.amazonaws.com/tinynakji-backend:latest
+          image: $BACKEND_IMAGE_URL
           ports:
-            - containerPort: 5000
+            - containerPort: $BACKEND_PORT
           env:
             - name: POSTGRES_HOST
-              value: "localhost"
+              value: $POSTGRES_HOST
             - name: POSTGRES_PORT
-              value: "5432"
+              value: $POSTGRES_PORT
             - name: POSTGRES_DB
-              value: "mydatabase"
+              value: $POSTGRES_DB
             - name: POSTGRES_USER
-              value: "myuser"
+              value: $POSTGRES_USER
             - name: POSTGRES_PASSWORD
-              value: "myuser"
+              value: $POSTGRES_PASSWORD
             - name: AWS_S3_BUCKET_NAME
-              value: "myuser"
+              value: $AWS_S3_BUCKET_NAME
             - name: AWS_ACCESS_KEY
-              value: "myuser"
+              value: $AWS_ACCESS_KEY
             - name: AWS_SECRET_ACCESS_KEY
-              value: "myuser"
+              value: $AWS_SECRET_ACCESS_KEY

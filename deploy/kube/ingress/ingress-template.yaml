@@ -7,7 +7,7 @@ metadata:
     alb.ingress.kubernetes.io/load-balancer-name: ingress
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:370056820766:certificate/426dc3ba-fbf8-4e8e-9508-9297efb902c4
+    alb.ingress.kubernetes.io/certificate-arn: $CERTIFICATE_ARN
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/healthcheck-path: /healthz
 spec:
@@ -15,7 +15,8 @@ spec:
   rules:
     - http:
         paths:
-          - path: /
+          - host: $PUBLIC_URL
+            path: /
             pathType: Prefix
             backend:
               service:

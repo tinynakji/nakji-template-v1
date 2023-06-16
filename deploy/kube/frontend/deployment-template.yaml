@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
         - name: ui-container
-          image: 370056820766.dkr.ecr.us-east-1.amazonaws.com/tinynakji-frontend:latest
+          image: $FRONTEND_IMAGE_URL
           ports:
-            - containerPort: 3000
+            - containerPort: $FRONTEND_PORT
           env:
             - name: API_PATH
               value: "http://api-service"
