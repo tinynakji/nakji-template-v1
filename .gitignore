@@ -11,7 +11,7 @@
 
 # Security related
 **/*.pem
-.env*
+.env
 
 # kube compiled related
 deploy/kube/backend/deployment.yaml

@@ -6,7 +6,16 @@ spec:
   selector:
     app: ui
   ports:
-    - protocol: TCP
+    # - name: https
+    #   protocol: TCP
+    #   port: 443
+    #   targetPort: http-server
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: $FRONTEND_PORT
+    - name: http
+      protocol: TCP
       port: 80
       targetPort: $FRONTEND_PORT
   type: ClusterIP
